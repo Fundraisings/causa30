@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <title>Causa30 | Historias que transforman</title>
+
+  <meta
+    name="description"
+    content="Historias reales convertidas en experiencias que fortalecen valores y generan impacto en la vida de los animales."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --verde: #1F5F4A;
+      --verde-deep: #12332A;
+      --coral: #E8664A;
+      --cream: #F8F5EF;
+      --white: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--verde-deep);
+      color: var(--cream);
+      font-family: "Manrope", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    button,
+    a {
+      font: inherit;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =========================================================
+       01 · HERO
+       ========================================================= */
+
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      width: 100%;
+      overflow: hidden;
+
+      display: flex;
+      align-items: flex-end;
+
+      background:
+        url("/images/c30v2hero.png")
+        center center / cover
+        no-repeat;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(8, 25, 21, 0.90) 0%,
+          rgba(8, 25, 21, 0.74) 31%,
+          rgba(8, 25, 21, 0.26) 62%,
+          rgba(8, 25, 21, 0.02) 100%
+        );
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+
+      background:
+        linear-gradient(
+          0deg,
+          rgba(7, 20, 17, 0.88) 0%,
+          rgba(7, 20, 17, 0.16) 45%,
+          rgba(7, 20, 17, 0.08) 100%
+        );
+
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+
+      width: min(100%, 1320px);
+      min-height: 100svh;
+
+      margin: 0 auto;
+      padding:
+        max(34px, env(safe-area-inset-top))
+        clamp(24px, 5vw, 76px)
+        max(34px, env(safe-area-inset-bottom));
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      margin-top: 2px;
+
+      animation: revealDown 0.9s ease both;
+    }
+
+    .brand-logo {
+      display: block;
+      width: clamp(145px, 15vw, 190px);
+      height: auto;
+      object-fit: contain;
+    }
+
+    .hero-copy {
+      width: min(690px, 100%);
+      margin-top: auto;
+      padding-top: 100px;
+      padding-bottom: clamp(24px, 5vh, 64px);
+    }
+
+    .accent-line {
+      display: block;
+      width: 52px;
+      height: 4px;
+      margin-bottom: 26px;
+      border-radius: 999px;
+      background: var(--coral);
+
+      animation: growLine 0.8s 0.15s ease both;
+    }
+
+    .eyebrow {
+      max-width: 420px;
+      margin-bottom: 24px;
+
+      font-size: clamp(12px, 1.25vw, 15px);
+      font-weight: 600;
+      line-height: 1.75;
+      letter-spacing: 0.25em;
+
+      color: rgba(248, 245, 239, 0.92);
+
+      animation: revealUp 0.8s 0.20s ease both;
+    }
+
+    .hero h1 {
+      max-width: 720px;
+
+      font-family: "DM Serif Display", Georgia, serif;
+      font-size: clamp(48px, 6.3vw, 92px);
+      font-weight: 400;
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+
+      text-wrap: balance;
+
+      animation: revealUp 0.9s 0.28s ease both;
+    }
+
+    .intro {
+      max-width: 590px;
+      margin-top: 27px;
+
+      font-size: clamp(16px, 1.4vw, 19px);
+      font-weight: 500;
+      line-height: 1.65;
+
+      color: rgba(248, 245, 239, 0.86);
+      text-wrap: pretty;
+
+      animation: revealUp 0.9s 0.38s ease both;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+
+      margin-top: 34px;
+
+      animation: revealUp 0.9s 0.48s ease both;
+    }
+
+    .primary-button {
+      min-height: 58px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+
+      padding: 0 28px;
+      border-radius: 999px;
+
+      background: var(--coral);
+      color: var(--white);
+
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.20);
+
+      transition:
+        transform 180ms ease,
+        background 180ms ease;
+    }
+
+    .primary-button:hover {
+      transform: translateY(-2px);
+      background: #EF7054;
+    }
+
+    .arrow {
+      width: 28px;
+      height: 28px;
+
+      display: grid;
+      place-items: center;
+
+      border-left: 1px solid rgba(255, 255, 255, 0.32);
+      padding-left: 18px;
+
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .scroll-indicator {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+
+      width: fit-content;
+      margin-top: 34px;
+
+      color: rgba(248, 245, 239, 0.72);
+
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+
+      animation: revealUp 0.9s 0.58s ease both;
+      transition: color 180ms ease;
+    }
+
+    .scroll-indicator span:last-child {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .scroll-indicator small {
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      color: rgba(248, 245, 239, 0.48);
+    }
+
+    .scroll-indicator:hover {
+      color: var(--cream);
+    }
+
+    .scroll-line {
+      position: relative;
+      width: 1px;
+      height: 42px;
+      overflow: hidden;
+      background: rgba(248, 245, 239, 0.26);
+    }
+
+    .scroll-line::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: 0;
+      width: 1px;
+      height: 50%;
+      background: var(--cream);
+
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    /* =========================================================
+       02 · LA EXPERIENCIA
+       ========================================================= */
+
+    .intro-section {
+      min-height: 100svh;
+
+      display: flex;
+      align-items: center;
+
+      padding:
+        clamp(90px, 11vw, 150px)
+        clamp(24px, 7vw, 100px);
+
+      background: var(--cream);
+      color: var(--verde-deep);
+    }
+
+    .intro-section-inner {
+      width: min(100%, 1120px);
+      margin: 0 auto;
+    }
+
+    .section-number {
+      display: block;
+      margin-bottom: 25px;
+
+      color: var(--coral);
+
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+    }
+
+    .experience-intro {
+      max-width: 950px;
+    }
+
+    .experience-kicker {
+      margin-bottom: 22px;
+
+      color: var(--coral);
+
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+    }
+
+    .intro-section h2 {
+      max-width: 920px;
+
+      font-family: "DM Serif Display", Georgia, serif;
+      font-size: clamp(48px, 7vw, 94px);
+      font-weight: 400;
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+    }
+
+    .intro-section h2 em {
+      display: block;
+      margin-top: 8px;
+
+      color: var(--verde);
+
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .experience-description {
+      max-width: 620px;
+      margin-top: 34px;
+
+      font-size: clamp(17px, 1.8vw, 21px);
+      line-height: 1.65;
+
+      color: rgba(18, 51, 42, 0.72);
+    }
+
+    .experience-description strong {
+      color: var(--verde-deep);
+    }
+
+    .experience-path {
+      width: 100%;
+
+      margin-top: clamp(70px, 9vw, 120px);
+      padding-top: 42px;
+
+      border-top: 1px solid rgba(18, 51, 42, 0.16);
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .path-item {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .path-item span {
+      color: var(--coral);
+
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+    }
+
+    .path-item strong {
+      color: var(--verde-deep);
+
+      font-size: clamp(12px, 1.2vw, 15px);
+      font-weight: 700;
+      letter-spacing: 0.10em;
+    }
+
+    .path-arrow {
+      color: rgba(18, 51, 42, 0.30);
+      font-size: 17px;
+
+      transform: rotate(-90deg);
+    }
+
+    .section-next {
+      width: 100%;
+
+      margin-top: clamp(80px, 10vw, 130px);
+      padding: 28px 0 12px;
+
+      border-top: 1px solid rgba(18, 51, 42, 0.18);
+
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      align-items: end;
+      gap: 30px;
+
+      color: var(--verde-deep);
+
+      transition:
+        transform 180ms ease,
+        opacity 180ms ease;
+    }
+
+    .section-next:hover {
+      transform: translateY(-3px);
+    }
+
+    .next-number {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+
+      color: rgba(18, 51, 42, 0.48);
+    }
+
+    .next-label {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+    }
+
+    .next-label small {
+      color: var(--coral);
+
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.20em;
+    }
+
+    .next-arrow {
+      color: var(--coral);
+
+      font-family: "DM Serif Display", Georgia, serif;
+      font-size: 36px;
+      line-height: 0.8;
+    }
+
+    /* =========================================================
+       03 · AHORA EN CAUSA30
+       ========================================================= */
+
+    .now-section {
+      position: relative;
+      min-height: 100svh;
+
+      display: flex;
+      align-items: center;
+
+      padding:
+        clamp(100px, 12vw, 160px)
+        clamp(24px, 7vw, 100px);
+
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 78% 38%,
+          rgba(232, 102, 74, 0.15),
+          transparent 32%
+        ),
+        var(--verde-deep);
+
+      color: var(--cream);
+    }
+
+    .now-section-inner {
+      width: min(100%, 1120px);
+      margin: 0 auto;
+    }
+
+    .section-number-light {
+      color: rgba(248, 245, 239, 0.48);
+    }
+
+    .now-eyebrow {
+      margin-top: 70px;
+      margin-bottom: 24px;
+
+      color: var(--coral);
+
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+    }
+
+    .now-section h2 {
+      max-width: 800px;
+
+      font-family: "DM Serif Display", Georgia, serif;
+      font-size: clamp(80px, 13vw, 180px);
+      font-weight: 400;
+      line-height: 0.78;
+      letter-spacing: -0.05em;
+    }
+
+    .now-section h2 em {
+      display: block;
+
+      color: var(--coral);
+
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .now-description {
+      max-width: 500px;
+      margin-top: 46px;
+
+      font-size: clamp(18px, 2vw, 23px);
+      line-height: 1.5;
+
+      color: rgba(248, 245, 239, 0.78);
+    }
+
+    .coming-soon {
+      display: inline-flex;
+
+      margin-top: 38px;
+      padding: 12px 18px;
+
+      border: 1px solid rgba(248, 245, 239, 0.24);
+      border-radius: 999px;
+
+      color: rgba(248, 245, 239, 0.74);
+
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.20em;
+    }
+
+    /* =========================================================
+       ANIMACIONES
+       ========================================================= */
+
+    @keyframes revealUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes revealDown {
+      from {
+        opacity: 0;
+        transform: translateY(-12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes growLine {
+      from {
+        opacity: 0;
+        transform: scaleX(0);
+        transform-origin: left;
+      }
+
+      to {
+        opacity: 1;
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    }
+
+    @keyframes scrollPulse {
+      0% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(300%);
+      }
+    }
+
+    /* =========================================================
+       MÓVIL
+       ========================================================= */
+
+    @media (max-width: 700px) {
+
+      .hero {
+        min-height: 100svh;
+
+        background-image:
+          linear-gradient(
+            180deg,
+            rgba(10, 27, 22, 0.08) 0%,
+            rgba(10, 27, 22, 0.03) 34%,
+            rgba(10, 27, 22, 0.34) 58%,
+            rgba(10, 27, 22, 0.92) 100%
+          ),
+          url("/images/hero-causa30-mobile.png");
+
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-color: #12332A;
+      }
+
+      .hero::before {
+        background:
+          linear-gradient(
+            180deg,
+            rgba(8, 25, 21, 0.42) 0%,
+            rgba(8, 25, 21, 0.10) 28%,
+            rgba(8, 25, 21, 0.35) 53%,
+            rgba(8, 25, 21, 0.94) 100%
+          );
+      }
+
+      .hero::after {
+        background:
+          linear-gradient(
+            0deg,
+            rgba(7, 20, 17, 0.92) 0%,
+            rgba(7, 20, 17, 0.10) 58%,
+            rgba(7, 20, 17, 0.12) 100%
+          );
+      }
+
+      .hero-inner {
+        padding:
+          max(24px, env(safe-area-inset-top))
+          18px
+          max(25px, env(safe-area-inset-bottom));
+      }
+
+      .brand {
+        width: fit-content;
+        margin-left: 0;
+        align-self: flex-start;
+      }
+
+      .brand-logo {
+        width: 105px;
+        max-width: 105px;
+        height: auto;
+      }
+
+      .hero-copy {
+        width: 100%;
+        padding-top: 45vh;
+        padding-bottom: 10px;
+      }
+
+      .accent-line {
+        width: 42px;
+        height: 3px;
+        margin-bottom: 17px;
+      }
+
+      .eyebrow {
+        margin-bottom: 15px;
+
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 1.65;
+        letter-spacing: 0.20em;
+      }
+
+      .hero h1 {
+        max-width: 520px;
+
+        font-size: clamp(43px, 12vw, 62px);
+        line-height: 0.98;
+      }
+
+      .intro {
+        max-width: 500px;
+        margin-top: 18px;
+
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 1.55;
+
+        color: rgba(248, 245, 239, 0.88);
+      }
+
+      .hero-actions {
+        margin-top: 23px;
+      }
+
+      .primary-button {
+        min-height: 54px;
+        padding: 0 23px;
+
+        font-size: 11px;
+        letter-spacing: 0.13em;
+      }
+
+      .scroll-indicator {
+        margin-top: 24px;
+      }
+
+      .scroll-line {
+        height: 32px;
+      }
+
+      /* BLOQUE 02 · MÓVIL */
+
+      .intro-section {
+        min-height: 100svh;
+
+        padding:
+          90px
+          20px
+          50px;
+      }
+
+      .section-number {
+        margin-bottom: 22px;
+        font-size: 10px;
+      }
+
+      .experience-kicker {
+        margin-bottom: 18px;
+
+        font-size: 9px;
+      }
+
+      .intro-section h2 {
+        font-size: clamp(48px, 14vw, 66px);
+        line-height: 0.94;
+      }
+
+      .experience-description {
+        margin-top: 28px;
+
+        font-size: 16px;
+      }
+
+      .experience-path {
+        margin-top: 65px;
+        padding-top: 35px;
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+      }
+
+      .path-item {
+        width: 100%;
+
+        flex-direction: row;
+        align-items: center;
+        gap: 18px;
+
+        padding: 15px 0;
+      }
+
+      .path-item span {
+        width: 25px;
+      }
+
+      .path-item strong {
+        font-size: 15px;
+        letter-spacing: 0.13em;
+      }
+
+      .path-arrow {
+        margin-left: 9px;
+
+        font-size: 14px;
+
+        transform: none;
+
+        color: var(--coral);
+      }
+
+      .section-next {
+        margin-top: 70px;
+        padding-top: 24px;
+
+        grid-template-columns: 1fr auto;
+        grid-template-areas:
+          "number number"
+          "label arrow";
+
+        gap: 18px;
+      }
+
+      .next-number {
+        grid-area: number;
+      }
+
+      .next-label {
+        grid-area: label;
+
+        font-size: 12px;
+      }
+
+      .next-arrow {
+        grid-area: arrow;
+        align-self: end;
+      }
+
+      /* BLOQUE 03 · MÓVIL */
+
+      .now-section {
+        min-height: 100svh;
+
+        padding:
+          90px
+          20px
+          70px;
+      }
+
+      .now-eyebrow {
+        margin-top: 80px;
+
+        font-size: 9px;
+      }
+
+      .now-section h2 {
+        font-size: clamp(82px, 25vw, 118px);
+      }
+
+      .now-description {
+        margin-top: 38px;
+
+        font-size: 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =======================================================
+       01 · INICIO
+       ======================================================= -->
+
+  <header class="hero" id="inicio">
+
+    <div class="hero-inner">
+
+      <a href="#inicio" class="brand" aria-label="Causa30 inicio">
+        <img
+          src="/images/logoC30.png"
+          alt="Causa30"
+          class="brand-logo"
+        >
+      </a>
+
+      <div class="hero-copy">
+
+        <span class="accent-line"></span>
+
+        <p class="eyebrow">
+          HISTORIAS REALES<br>
+          VALORES QUE TRANSFORMAN
+        </p>
+
+        <h1>
+          Hay historias que pueden cambiar la forma en que vivimos.
+        </h1>
+
+        <p class="intro">
+          Historias reales convertidas en experiencias que nos ayudan
+          a fortalecer valores, llevarlos a nuestra vida y generar
+          impacto en la vida de los animales.
+        </p>
+
+        <div class="hero-actions">
+          <a
+            href="#descubrir"
+            class="primary-button"
+          >
+            DESCUBRIR CAUSA30
+
+            <span class="arrow" aria-hidden="true">
+              ↓
+            </span>
+          </a>
+        </div>
+
+        <a
+          href="#descubrir"
+          class="scroll-indicator"
+          aria-label="Ir a La Experiencia"
+        >
+          <span class="scroll-line"></span>
+
+          <span>
+            <small>01 · INICIO</small>
+            SIGUIENTE · LA EXPERIENCIA ↓
+          </span>
+        </a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main>
+
+    <!-- =======================================================
+         02 · LA EXPERIENCIA
+         ======================================================= -->
+
+    <section
+      class="intro-section"
+      id="descubrir"
+    >
+
+      <div class="intro-section-inner">
+
+        <span class="section-number">
+          02 · LA EXPERIENCIA
+        </span>
+
+        <div class="experience-intro">
+
+          <p class="experience-kicker">
+            UNA HISTORIA ES SOLO EL COMIENZO
+          </p>
+
+          <h2>
+            No solo conoces una historia.
+            <em>La llevas contigo.</em>
+          </h2>
+
+          <p class="experience-description">
+            Cada experiencia Causa30 parte de una historia real
+            y termina donde realmente importa:
+            <strong>en la tuya.</strong>
+          </p>
+
+        </div>
+
+        <div class="experience-path">
+
+          <div class="path-item">
+            <span>01</span>
+            <strong>CONOCE</strong>
+          </div>
+
+          <div class="path-arrow" aria-hidden="true">↓</div>
+
+          <div class="path-item">
+            <span>02</span>
+            <strong>DESCUBRE</strong>
+          </div>
+
+          <div class="path-arrow" aria-hidden="true">↓</div>
+
+          <div class="path-item">
+            <span>03</span>
+            <strong>DECIDE</strong>
+          </div>
+
+          <div class="path-arrow" aria-hidden="true">↓</div>
+
+          <div class="path-item">
+            <span>04</span>
+            <strong>REFLEXIONA</strong>
+          </div>
+
+          <div class="path-arrow" aria-hidden="true">↓</div>
+
+          <div class="path-item">
+            <span>05</span>
+            <strong>ESCUCHA</strong>
+          </div>
+
+          <div class="path-arrow" aria-hidden="true">↓</div>
+
+          <div class="path-item">
+            <span>06</span>
+            <strong>ACTÚA</strong>
+          </div>
+
+        </div>
+
+        <a
+          href="#ahora"
+          class="section-next"
+        >
+          <span class="next-number">
+            02 · LA EXPERIENCIA
+          </span>
+
+          <span class="next-label">
+            <small>SIGUIENTE</small>
+            AHORA EN CAUSA30
+          </span>
+
+          <span class="next-arrow" aria-hidden="true">↓</span>
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- =======================================================
+         03 · AHORA EN CAUSA30
+         ======================================================= -->
+
+    <section
+      class="now-section"
+      id="ahora"
+    >
+
+      <div class="now-section-inner">
+
+        <span class="section-number section-number-light">
+          03 · AHORA EN CAUSA30
+        </span>
+
+        <p class="now-eyebrow">
+          EXPERIENCIA 01 · PERSEVERANCIA
+        </p>
+
+        <h2>
+          NO TE
+          <em>RINDAS.</em>
+        </h2>
+
+        <p class="now-description">
+          30 días para fortalecer la perseverancia.
+        </p>
+
+        <span class="coming-soon">
+          PRÓXIMAMENTE
+        </span>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+</html>
