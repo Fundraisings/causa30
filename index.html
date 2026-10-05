@@ -776,33 +776,131 @@
 
   <main>
 
-    <section
-      class="intro-section"
-      id="descubrir"
-    >
+    /* BLOQUE 02 · MÓVIL */
 
-      <div class="intro-section-inner">
+.intro-section {
+  min-height: 100svh;
 
-        <span class="section-number">
-          01 · LA EXPERIENCIA
-        </span>
+  padding:
+    90px
+    20px
+    50px;
+}
+
+.intro-section h2 {
+  font-size: clamp(48px, 14vw, 66px);
+  line-height: 0.94;
+}
+
+.experience-kicker {
+  margin-bottom: 18px !important;
+}
+
+.experience-description {
+  margin-top: 28px !important;
+
+  font-size: 16px !important;
+}
 
 
-        <h2>
-          No solo conoces una historia.
-          La llevas contigo.
-        </h2>
+/* MÉTODO VERTICAL */
+
+.experience-path {
+  margin-top: 65px;
+  padding-top: 35px;
+
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.path-item {
+  width: 100%;
+
+  flex-direction: row;
+  align-items: center;
+  gap: 18px;
+
+  padding: 15px 0;
+}
+
+.path-item span {
+  width: 25px;
+}
+
+.path-item strong {
+  font-size: 15px;
+  letter-spacing: 0.13em;
+}
+
+.path-arrow {
+  margin-left: 9px;
+
+  font-size: 14px;
+
+  transform: none;
+
+  color: var(--coral);
+}
 
 
-        <p>
-          Cada experiencia Causa30 parte de una historia real y
-          termina donde realmente importa:
-          <strong>en la tuya.</strong>
-        </p>
+/* SIGUIENTE */
 
-      </div>
+.section-next {
+  margin-top: 70px;
+  padding-top: 24px;
 
-    </section>
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "number number"
+    "label arrow";
+
+  gap: 18px;
+}
+
+.next-number {
+  grid-area: number;
+}
+
+.next-label {
+  grid-area: label;
+
+  font-size: 12px;
+}
+
+.next-arrow {
+  grid-area: arrow;
+
+  align-self: end;
+}
+
+
+/* BLOQUE 03 */
+
+.now-section {
+  min-height: 100svh;
+
+  padding:
+    90px
+    20px
+    70px;
+}
+
+.now-eyebrow {
+  margin-top: 80px;
+
+  font-size: 9px;
+}
+
+.now-section h2 {
+  font-size: clamp(82px, 25vw, 118px);
+}
+
+.now-description {
+  margin-top: 38px;
+
+  font-size: 18px;
+}
 
   </main>
 
