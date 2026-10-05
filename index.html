@@ -344,7 +344,22 @@
       animation: revealUp 0.9s 0.58s ease both;
     }
 
+.scroll-indicator span:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
 
+.scroll-indicator small {
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: rgba(248, 245, 239, 0.48);
+}
+
+.scroll-indicator:hover {
+  color: var(--cream);
+}
     .scroll-line {
       position: relative;
 
