@@ -2,116 +2,770 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Causa30</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <title>Causa30 | Historias que transforman</title>
 
   <meta
     name="description"
-    content="Historias reales. Valores que transforman. Una causa que nos une."
+    content="Historias reales convertidas en experiencias que fortalecen valores y generan impacto en la vida de los animales."
+  >
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
   >
 
   <style>
+
+    /* =========================================================
+       CAUSA30 · HOME
+       ========================================================= */
+
+    :root {
+      --verde: #1F5F4A;
+      --verde-deep: #12332A;
+      --coral: #E8664A;
+      --cream: #F8F5EF;
+      --white: #FFFFFF;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      min-height: 100vh;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #12332A;
-      color: #F8F5EF;
+      margin: 0;
+      background: var(--verde-deep);
+      color: var(--cream);
+      font-family: "Manrope", sans-serif;
+      -webkit-font-smoothing: antialiased;
     }
 
-    main {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 32px 24px;
+    button,
+    a {
+      font: inherit;
     }
 
-    .welcome {
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .hero {
+      position: relative;
+      min-height: 100svh;
       width: 100%;
-      max-width: 520px;
+      overflow: hidden;
+
+      display: flex;
+      align-items: flex-end;
+
+      background:
+        url("/images/hero-causa30.png")
+        center center / cover
+        no-repeat;
     }
+
+
+    /* Oscurece la parte izquierda e inferior para proteger texto */
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(8, 25, 21, 0.90) 0%,
+          rgba(8, 25, 21, 0.74) 31%,
+          rgba(8, 25, 21, 0.26) 62%,
+          rgba(8, 25, 21, 0.02) 100%
+        );
+    }
+
+
+    /* Degradado inferior cinematográfico */
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+
+      background:
+        linear-gradient(
+          0deg,
+          rgba(7, 20, 17, 0.88) 0%,
+          rgba(7, 20, 17, 0.16) 45%,
+          rgba(7, 20, 17, 0.08) 100%
+        );
+
+      pointer-events: none;
+    }
+
+
+    /* =========================================================
+       CONTENIDO HERO
+       ========================================================= */
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+
+      width: min(100%, 1320px);
+      min-height: 100svh;
+
+      margin: 0 auto;
+      padding:
+        max(34px, env(safe-area-inset-top))
+        clamp(24px, 5vw, 76px)
+        max(34px, env(safe-area-inset-bottom));
+
+      display: flex;
+      flex-direction: column;
+    }
+
+
+    /* =========================================================
+       MARCA
+       ========================================================= */
 
     .brand {
-      display: inline-block;
-      margin-bottom: 48px;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
+      display: inline-flex;
+      align-items: center;
+
+      width: fit-content;
+
+      margin-top: 2px;
+
+      font-size: clamp(25px, 3vw, 38px);
+      font-weight: 500;
+      line-height: 1;
+
+      letter-spacing: 0.12em;
+
+      animation: revealDown 0.9s ease both;
     }
+
+    .brand-word {
+      color: var(--cream);
+    }
+
+    .brand-number {
+      color: var(--coral);
+      font-weight: 700;
+    }
+
+
+    /* =========================================================
+       BLOQUE EDITORIAL
+       ========================================================= */
+
+    .hero-copy {
+      width: min(690px, 100%);
+      margin-top: auto;
+      padding-top: 100px;
+      padding-bottom: clamp(24px, 5vh, 64px);
+    }
+
+
+    .accent-line {
+      display: block;
+
+      width: 52px;
+      height: 4px;
+
+      margin-bottom: 26px;
+
+      border-radius: 999px;
+
+      background: var(--coral);
+
+      animation: growLine 0.8s 0.15s ease both;
+    }
+
 
     .eyebrow {
-      margin-bottom: 18px;
-      color: #E8664A;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.16em;
+      max-width: 420px;
+
+      margin-bottom: 24px;
+
+      font-size: clamp(12px, 1.25vw, 15px);
+      font-weight: 600;
+      line-height: 1.75;
+
+      letter-spacing: 0.25em;
+
+      color: rgba(248, 245, 239, 0.92);
+
+      animation: revealUp 0.8s 0.20s ease both;
     }
 
-    h1 {
-      max-width: 460px;
-      font-size: clamp(44px, 12vw, 72px);
-      line-height: 0.96;
-      letter-spacing: -0.05em;
+
+    .hero h1 {
+      max-width: 720px;
+
+      font-family: "DM Serif Display", Georgia, serif;
+      font-size: clamp(48px, 6.3vw, 92px);
+      font-weight: 400;
+      line-height: 0.98;
+
+      letter-spacing: -0.035em;
+
+      text-wrap: balance;
+
+      animation: revealUp 0.9s 0.28s ease both;
     }
 
-    p {
-      max-width: 410px;
-      margin-top: 28px;
-      color: rgba(248, 245, 239, 0.76);
-      font-size: 18px;
-      line-height: 1.6;
+
+    .intro {
+      max-width: 590px;
+
+      margin-top: 27px;
+
+      font-size: clamp(16px, 1.4vw, 19px);
+      font-weight: 500;
+      line-height: 1.65;
+
+      color: rgba(248, 245, 239, 0.86);
+
+      text-wrap: pretty;
+
+      animation: revealUp 0.9s 0.38s ease both;
     }
 
-    .status {
+
+    /* =========================================================
+       CTA
+       ========================================================= */
+
+    .hero-actions {
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin-top: 52px;
-      font-size: 13px;
-      color: rgba(248, 245, 239, 0.58);
+      gap: 22px;
+      flex-wrap: wrap;
+
+      margin-top: 34px;
+
+      animation: revealUp 0.9s 0.48s ease both;
     }
 
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #E8664A;
+
+    .primary-button {
+      min-height: 58px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+
+      padding: 0 28px;
+
+      border-radius: 999px;
+
+      background: var(--coral);
+      color: var(--white);
+
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+
+      box-shadow:
+        0 14px 34px rgba(0, 0, 0, 0.20);
+
+      transition:
+        transform 180ms ease,
+        background 180ms ease;
     }
+
+
+    .primary-button:hover {
+      transform: translateY(-2px);
+      background: #EF7054;
+    }
+
+
+    .arrow {
+      width: 28px;
+      height: 28px;
+
+      display: grid;
+      place-items: center;
+
+      border-left:
+        1px solid rgba(255, 255, 255, 0.32);
+
+      padding-left: 18px;
+
+      font-size: 20px;
+      line-height: 1;
+    }
+
+
+    /* =========================================================
+       INDICADOR DESLIZA
+       ========================================================= */
+
+    .scroll-indicator {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+
+      margin-top: 34px;
+
+      color: rgba(248, 245, 239, 0.72);
+
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+
+      animation: revealUp 0.9s 0.58s ease both;
+    }
+
+
+    .scroll-line {
+      position: relative;
+
+      width: 1px;
+      height: 42px;
+
+      overflow: hidden;
+
+      background:
+        rgba(248, 245, 239, 0.26);
+    }
+
+
+    .scroll-line::after {
+      content: "";
+
+      position: absolute;
+      top: -50%;
+      left: 0;
+
+      width: 1px;
+      height: 50%;
+
+      background: var(--cream);
+
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+
+    /* =========================================================
+       SEGUNDA SECCIÓN · SOLO APERTURA
+       ========================================================= */
+
+    .intro-section {
+      min-height: 70vh;
+
+      display: flex;
+      align-items: center;
+
+      padding:
+        clamp(90px, 13vw, 170px)
+        clamp(24px, 7vw, 100px);
+
+      background: var(--cream);
+      color: var(--verde-deep);
+    }
+
+
+    .intro-section-inner {
+      width: min(100%, 1120px);
+      margin: 0 auto;
+    }
+
+
+    .section-number {
+      display: block;
+
+      margin-bottom: 25px;
+
+      color: var(--coral);
+
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+    }
+
+
+    .intro-section h2 {
+      max-width: 920px;
+
+      font-family: "DM Serif Display", Georgia, serif;
+      font-size: clamp(48px, 7vw, 94px);
+      font-weight: 400;
+      line-height: 0.98;
+
+      letter-spacing: -0.035em;
+    }
+
+
+    .intro-section p {
+      max-width: 590px;
+
+      margin-top: 34px;
+
+      font-size: clamp(17px, 1.8vw, 21px);
+      line-height: 1.65;
+
+      color: rgba(18, 51, 42, 0.72);
+    }
+
+
+    .intro-section strong {
+      color: var(--verde-deep);
+    }
+
+
+    /* =========================================================
+       ANIMACIONES
+       ========================================================= */
+
+    @keyframes revealUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+
+    @keyframes revealDown {
+      from {
+        opacity: 0;
+        transform: translateY(-12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+
+    @keyframes growLine {
+      from {
+        opacity: 0;
+        transform: scaleX(0);
+        transform-origin: left;
+      }
+
+      to {
+        opacity: 1;
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    }
+
+
+    @keyframes scrollPulse {
+      0% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(300%);
+      }
+    }
+
+
+    /* =========================================================
+       MÓVIL
+       ========================================================= */
+
+    @media (max-width: 700px) {
+
+      .hero {
+        min-height: 100svh;
+
+        /*
+          En móvil desplazamos ligeramente la foto
+          para mantener visibles al niño y al perro.
+        */
+
+        background-position: 62% center;
+      }
+
+
+      .hero::before {
+        background:
+          linear-gradient(
+            180deg,
+            rgba(8, 25, 21, 0.42) 0%,
+            rgba(8, 25, 21, 0.10) 28%,
+            rgba(8, 25, 21, 0.35) 53%,
+            rgba(8, 25, 21, 0.94) 100%
+          );
+      }
+
+
+      .hero::after {
+        background:
+          linear-gradient(
+            0deg,
+            rgba(7, 20, 17, 0.92) 0%,
+            rgba(7, 20, 17, 0.10) 58%,
+            rgba(7, 20, 17, 0.12) 100%
+          );
+      }
+
+
+      .hero-inner {
+        padding:
+          max(28px, env(safe-area-inset-top))
+          22px
+          max(25px, env(safe-area-inset-bottom));
+      }
+
+
+      .brand {
+        font-size: 25px;
+      }
+
+
+      .hero-copy {
+        width: 100%;
+
+        padding-top: 45vh;
+        padding-bottom: 10px;
+      }
+
+
+      .accent-line {
+        width: 42px;
+        height: 3px;
+
+        margin-bottom: 17px;
+      }
+
+
+      .eyebrow {
+        margin-bottom: 15px;
+
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 1.65;
+
+        letter-spacing: 0.20em;
+      }
+
+
+      .hero h1 {
+        max-width: 520px;
+
+        font-size: clamp(43px, 12vw, 62px);
+        line-height: 0.98;
+      }
+
+
+      .intro {
+        max-width: 500px;
+
+        margin-top: 18px;
+
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 1.55;
+
+        color: rgba(248, 245, 239, 0.88);
+      }
+
+
+      .hero-actions {
+        margin-top: 23px;
+      }
+
+
+      .primary-button {
+        min-height: 54px;
+
+        padding: 0 23px;
+
+        font-size: 11px;
+
+        letter-spacing: 0.13em;
+      }
+
+
+      .scroll-indicator {
+        margin-top: 24px;
+      }
+
+
+      .scroll-line {
+        height: 32px;
+      }
+
+
+      .intro-section {
+        min-height: 75vh;
+
+        padding: 100px 24px;
+      }
+
+
+      .intro-section h2 {
+        font-size: clamp(46px, 13vw, 68px);
+      }
+
+
+      .intro-section p {
+        margin-top: 27px;
+
+        font-size: 17px;
+      }
+    }
+
+
+    /* Reduce animaciones si el usuario lo solicita */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
   </style>
 </head>
 
+
 <body>
 
+  <!-- =======================================================
+       HERO
+       ======================================================= -->
+
+  <header class="hero">
+
+    <div class="hero-inner">
+
+      <a href="/" class="brand" aria-label="Causa30 inicio">
+        <span class="brand-word">CAUSA</span>
+        <span class="brand-number">30</span>
+      </a>
+
+
+      <div class="hero-copy">
+
+        <span class="accent-line"></span>
+
+
+        <p class="eyebrow">
+          HISTORIAS REALES<br>
+          VALORES QUE TRANSFORMAN
+        </p>
+
+
+        <h1>
+          Hay historias que pueden cambiar la forma en que vivimos.
+        </h1>
+
+
+        <p class="intro">
+          Historias reales convertidas en experiencias que nos ayudan
+          a fortalecer valores, llevarlos a nuestra vida y generar
+          impacto en la vida de los animales.
+        </p>
+
+
+        <div class="hero-actions">
+
+          <a
+            href="#descubrir"
+            class="primary-button"
+          >
+            DESCUBRIR CAUSA30
+
+            <span class="arrow" aria-hidden="true">
+              ↓
+            </span>
+          </a>
+
+        </div>
+
+
+        <div
+          class="scroll-indicator"
+          aria-hidden="true"
+        >
+          <span class="scroll-line"></span>
+          <span>DESLIZA</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =======================================================
+       COMIENZO DE LA NARRATIVA
+       ======================================================= -->
+
   <main>
-    <section class="welcome">
 
-      <span class="brand">CAUSA30</span>
+    <section
+      class="intro-section"
+      id="descubrir"
+    >
 
-      <div class="eyebrow">ESTAMOS CONSTRUYENDO ALGO NUEVO</div>
+      <div class="intro-section-inner">
 
-      <h1>
-        Historias reales.<br>
-        Valores que transforman.
-      </h1>
+        <span class="section-number">
+          01 · LA EXPERIENCIA
+        </span>
 
-      <p>
-        Una nueva forma de vivir historias, convertirlas en acción
-        y ayudar a quienes no tienen voz.
-      </p>
 
-      <div class="status">
-        <span class="dot"></span>
-        <span>Nueva experiencia en desarrollo</span>
+        <h2>
+          No solo conoces una historia.
+          La llevas contigo.
+        </h2>
+
+
+        <p>
+          Cada experiencia Causa30 parte de una historia real y
+          termina donde realmente importa:
+          <strong>en la tuya.</strong>
+        </p>
+
       </div>
 
     </section>
+
   </main>
 
 </body>
