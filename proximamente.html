@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Causa30 · 2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--verde:#1F5F4A;--deep:#102d25;--coral:#E8664A;--cream:#F8F5EF;--ink:#173029}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Manrope,Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+.page{min-height:100svh;overflow:hidden}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:24px clamp(22px,5vw,72px);position:relative;z-index:4}
+.logo{width:118px;height:auto}
+.back{font-size:11px;letter-spacing:.18em;font-weight:800;text-transform:uppercase;border-bottom:1px solid rgba(23,48,41,.35);padding-bottom:5px}
+.intro{padding:4vh clamp(22px,7vw,110px) 28px;max-width:1180px}
+.eyebrow{font-size:11px;letter-spacing:.22em;font-weight:800;color:var(--coral);margin:0 0 18px}
+h1{font-family:"DM Serif Display",serif;font-size:clamp(52px,8vw,116px);line-height:.88;letter-spacing:-.035em;margin:0;max-width:1000px;font-weight:400}
+h1 em{color:var(--verde);font-weight:400}
+.lead{font-size:clamp(16px,1.5vw,21px);line-height:1.65;max-width:720px;margin:28px 0 0;color:#4d615a}
+.formula{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.formula span{font-size:10px;letter-spacing:.16em;font-weight:800;border:1px solid rgba(31,95,74,.22);border-radius:999px;padding:10px 13px;background:rgba(255,255,255,.45)}
+.gallery-wrap{position:relative;padding:24px 0 48px}
+.gallery{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 clamp(22px,7vw,110px) 20px;scrollbar-width:none}
+.gallery::-webkit-scrollbar{display:none}
+.value-card{position:relative;flex:0 0 min(78vw,370px);height:min(63vh,610px);min-height:480px;border-radius:28px;overflow:hidden;scroll-snap-align:start;color:white;padding:25px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 25px 60px rgba(16,45,37,.16);isolation:isolate;background:#173b31}
+.value-card:before,.value-card:after{content:"";position:absolute;inset:0;z-index:-2}
+.value-card:before{background:radial-gradient(circle at 72% 22%,rgba(255,255,255,.24),transparent 24%),linear-gradient(155deg,var(--a),var(--b) 52%,#0b211b)}
+.value-card:after{background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.05) 45%,rgba(0,0,0,.56));z-index:-1}
+.card-glow{position:absolute;width:260px;height:260px;border:1px solid rgba(255,255,255,.22);border-radius:50%;right:-75px;top:72px}
+.card-glow:after{content:"";position:absolute;width:150px;height:150px;border:1px solid rgba(255,255,255,.13);border-radius:50%;left:34px;top:34px}
+.card-top{display:flex;justify-content:space-between;font-size:10px;letter-spacing:.18em;font-weight:800;opacity:.9}
+.card-copy p{font-size:10px;letter-spacing:.2em;font-weight:800;margin:0 0 9px;opacity:.72}
+.card-copy h2{font-family:"DM Serif Display",serif;font-size:clamp(40px,4vw,58px);font-weight:400;line-height:.94;margin:0;letter-spacing:-.025em;overflow-wrap:anywhere}
+.card-copy .rule{width:42px;height:3px;background:var(--coral);margin:18px 0}
+.card-copy span{display:block;max-width:280px;font-size:14px;line-height:1.55;opacity:.9}
+.purpose{--a:#8b6f43;--b:#315b4d} .empathy{--a:#8a5d59;--b:#31596b}
+.discipline{--a:#6d573f;--b:#1f4d43} .courage{--a:#9b563f;--b:#3d4238}
+.gratitude{--a:#9b7748;--b:#49624c} .responsibility{--a:#496b70;--b:#29483e}
+.patience{--a:#6b6d52;--b:#31544a} .solidarity{--a:#9b654d;--b:#315c52}
+.resilience{--a:#4b6575;--b:#294a42} .commitment{--a:#76584b;--b:#244c42}
+.generosity{--a:#966e55;--b:#355a4d} .hope{--a:#6e7756;--b:#315c52}
+.hint{padding:0 clamp(22px,7vw,110px) 32px;font-size:11px;letter-spacing:.13em;font-weight:800;color:#73837d}
+.bottom{background:var(--deep);color:white;padding:40px clamp(22px,7vw,110px);display:flex;justify-content:space-between;align-items:center;gap:30px}
+.bottom p{margin:0;font-family:"DM Serif Display",serif;font-size:clamp(28px,4vw,48px);line-height:1.02;max-width:720px}
+.next{flex:0 0 auto;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:15px 20px;font-size:11px;letter-spacing:.13em;font-weight:800}
+@media(max-width:700px){
+ .topbar{padding:20px 22px} .logo{width:104px}
+ .intro{padding:5vh 22px 20px} h1{font-size:54px}
+ .lead{font-size:15px;margin-top:22px} .formula{margin-top:22px}
+ .gallery{padding-left:22px;padding-right:22px;gap:14px}
+ .value-card{flex-basis:82vw;height:56vh;min-height:455px;border-radius:24px}
+ .hint{padding:0 22px 28px}
+ .bottom{padding:34px 22px;align-items:flex-start;flex-direction:column}
+}
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="topbar">
+    <a href="index.html"><img class="logo" src="/images/logoC30.png" alt="Causa30"></a>
+    <a class="back" href="index.html#ahora">← VOLVER</a>
+  </header>
+
+  <section class="intro">
+    <p class="eyebrow">LO QUE VIENE · CAUSA30 2027</p>
+    <h1>NO TE RINDAS es solamente <em>el comienzo.</em></h1>
+    <p class="lead">En 2027 comienza nuestro primer gran recorrido: doce meses para explorar doce valores que todavía importan y convertir cada ciclo en una oportunidad de generar impacto.</p>
+    <div class="formula">
+      <span>12 MESES</span><span>12 VALORES</span><span>12 EXPERIENCIAS</span><span>12 CAUSAS</span>
+    </div>
+  </section>
+
+  <section class="gallery-wrap" aria-label="Valores Causa30 2027">
+    <div class="gallery"><article class="value-card purpose">
+      <div class="card-glow"></div>
+      <div class="card-top"><span>01</span><span>ENERO</span></div>
+      <div class="card-copy"><p>VALOR</p><h2>PROPÓSITO</h2><div class="rule"></div><span>Encontrar una dirección.</span></div>
+    </article>
+<article class="value-card empathy">
+      <div class="card-glow"></div>
+      <div class="card-top"><span>02</span><span>FEBRERO</span></div>
+      <div class="card-copy"><p>VALOR</p><h2>EMPATÍA</h2><div class="rule"></div><span>Aprender a mirar al otro.</span></div>
+    </article>
+<article class="value-card discipline">
+      <div class="card-glow"></div>
+      <div class="card-top"><span>03</span><span>MARZO</span></div>
+      <div class="card-copy"><p>VALOR</p><h2>DISCIPLINA</h2><div class="rule"></div><span>Continuar incluso cuando no apetece.</span></div>
+    </article>
+<article class="value-card courage">
+      <div class="card-glow"></div>
+      <div class="card-top"><span>04</span><span>ABRIL</span></div>
+      <div class="card-copy"><p>VALOR</p><h2>CORAJE</h2><div class="rule"></div><span>Avanzar aun cuando existe miedo.</span></div>
+    </article>
+<article class="value-card gratitude">
+      <div class="card-glow"></div>
+      <div class="card-top"><span>05</span><span>MAYO</span></div>
+      <div class="card-copy"><p>VALOR</p><h2>GRATITUD</h2><div class="rule"></div><span>Reconocer lo que solemos dar por sentado.</span></div>
+    </article>
+<article class="value-card responsibility">
+      <div class="card-glow"></div>
+      <div class="card-top"><span>06</span><span>JUNIO</span></div>
+      <div class="card-copy"><p>VALOR</p><h2>RESPONSABILIDAD</h2><div class="rule"></div><span>Entender que nuestras decisiones afectan a otros.</span></div>
+    </article>
+<article class="value-card patience">
+      <div class="card-glow"></div>
+      <div class="card-top"><span>07</span><span>JULIO</span></div>
+      <div class="card-copy"><p>VALOR</p><h2>PACIENCIA</h2><div class="rule"></div><span>Respetar los procesos que necesitan tiempo.</span></div>
+    </article>
+<article class="value-card solidarity">
+      <div class="card-glow"></div>
+      <div class="card-top"><span>08</span><span>AGOSTO</span></div>
+      <div class="card-copy"><p>VALOR</p><h2>SOLIDARIDAD</h2><div class="rule"></div><span>Descubrir lo que ocurre cuando decidimos ayudar.</span></div>
+    </article>
+<article class="value-card resilience">
+      <div class="card-glow"></div>
+      <div class="card-top"><span>09</span><span>SEPTIEMBRE</span></div>
+      <div class="card-copy"><p>VALOR</p><h2>RESILIENCIA</h2><div class="rule"></div><span>Reconstruirse después de una caída.</span></div>
+    </article>
+<article class="value-card commitment">
+      <div class="card-glow"></div>
+      <div class="card-top"><span>10</span><span>OCTUBRE</span></div>
+      <div class="card-copy"><p>VALOR</p><h2>COMPROMISO</h2><div class="rule"></div><span>Permanecer cuando sería más sencillo abandonar.</span></div>
+    </article>
+<article class="value-card generosity">
+      <div class="card-glow"></div>
+      <div class="card-top"><span>11</span><span>NOVIEMBRE</span></div>
+      <div class="card-copy"><p>VALOR</p><h2>GENEROSIDAD</h2><div class="rule"></div><span>Descubrir el valor de dar.</span></div>
+    </article>
+<article class="value-card hope">
+      <div class="card-glow"></div>
+      <div class="card-top"><span>12</span><span>DICIEMBRE</span></div>
+      <div class="card-copy"><p>VALOR</p><h2>ESPERANZA</h2><div class="rule"></div><span>Seguir creyendo que algo puede cambiar.</span></div>
+    </article></div>
+    <div class="hint">DESLIZA PARA DESCUBRIR LOS PRÓXIMOS VALORES →</div>
+  </section>
+
+  <section class="bottom">
+    <p>30 días para conocerlo.<br>30 días para practicarlo.<br><em>30 días para convertirlo en algo tuyo.</em></p>
+    <a class="next" href="#">CONTINUAR →</a>
+  </section>
+</main>
+</body>
+</html>
